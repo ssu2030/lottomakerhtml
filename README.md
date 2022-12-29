@@ -5,11 +5,11 @@
 
 ##### 초기화면
 
-![image](https://user-images.githubusercontent.com/31645582/209923701-993dfacb-a434-4b61-8eb9-4d87e0fcd918.png)
+![image](https://user-images.githubusercontent.com/31645582/209939193-a6500a01-3679-4db1-9f0b-826a6dd38269.png)
 
 
 ##### 버튼 클릭 시
 
-![image](https://user-images.githubusercontent.com/31645582/209923918-91e5faa0-6f22-4625-9045-c5e6981fb01b.png)
+![image](https://user-images.githubusercontent.com/31645582/209939226-d8e2a1f4-523a-4e02-bdfd-f37f98d230e1.png)
 
 
