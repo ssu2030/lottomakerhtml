@@ -10,26 +10,28 @@
 <style>
  #main_Wrapper {
     width: 100%;
-    height: 100px;
-
+    height: 100%;
  }
  #inner_Wrapper {
     border-radius: 5px;
-    background-color: black;
+    background-color: white;
+    border: #353535;
+    border-radius: 5px;
+    border-style: solid;
     width: 400px;
-    height: 310px;
+    height: 375px;
     margin: 0 auto;
  }
  #name_section {
-    padding-top: 40px;
     text-align: center;
-    color: white;
+    color: #353535;
     font-weight:bold;
     font-family: "Noto Sans KR";
     font-style: normal;
     src: url(https://fonts.gstatic.com/s/notosanskr/v13/PbykFmXiEBPT4ITbgNA5Cgm203Tq4JJWq209pU0DPdWuqxJFA4GNDCBYtw.0.woff2)
     format("woff2");
     font-size: 30px;
+    user-select: none;
  }
  #number_Wrapper {
     border-radius: 5px;
@@ -43,7 +45,7 @@
     font-family: "Noto Sans KR";
     src: url(https://fonts.gstatic.com/s/notosanskr/v13/PbykFmXiEBPT4ITbgNA5Cgm203Tq4JJWq209pU0DPdWuqxJFA4GNDCBYtw.0.woff2)
     format("woff2");
-    background-color: white;
+    background-color: #353535;
  }
  #button_Select {
     background-color: #353535;
@@ -55,6 +57,11 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 35px;
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v13/PbykFmXiEBPT4ITbgNA5Cgm203Tq4JJWq209pU0DPdWuqxJFA4GNDCBYtw.0.woff2)
+    format("woff2");
+    font-size: 15px;
 
  }
  #button_Select:hover {
@@ -68,6 +75,7 @@
  #num_part {
     display: none;
  }
+
  body {
     animation: fadeInAnimation ease 4s;
     animation-iteration-count: 1;
@@ -82,20 +90,47 @@
         opacity: 1;
      }
 }
+
+#back_button {
+    display: flex;
+    margin: 0 auto;
+    background-color: #353535;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 4px;
+    justify-content: center;
+    width: 60px;
+    height: 20px;
+    color: white;
+}
+#back_button:hover {
+    background-color: rgb(207, 172, 235);
+    color: #353535;
+ }
+#img_img {
+    height: 70px;
+    padding: 5px;
+    margin: 0 auto;
+    display: flex;
+}
 </style>
 <div id='main_Wrapper'>
     <div id='inner_Wrapper'>
+    <img id='img_img' src="https://thecharliegardfoundation.org/wp-content/uploads/2020/05/Lottery-Numbers.gif"/>
 	<p id='name_section'>Random Lotto Maker</p>
     <div id='number_Wrapper'>
         <div id='button_part'>
             <input id='button_Select' type="button" value="make number" onclick="submitButton()"/>
         </div>
         <div id='num_part'>
-            <div id='div_0' style="margin-left: 30px;"> </div>
-            <div id='div_1' style="margin-left: 30px;"> </div>
-            <div id='div_2' style="margin-left: 30px;"> </div>
-            <div id='div_3' style="margin-left: 30px;"> </div>
-            <div id='div_4' style="margin-left: 30px;"> </div>
+            <div id='div_0' style="margin-left: 30px; color:white;"> </div>
+            <div id='div_1' style="margin-left: 30px; color:white;"> </div>
+            <div id='div_2' style="margin-left: 30px; color:white;"> </div>
+            <div id='div_3' style="margin-left: 30px; color:white;"> </div>
+            <div id='div_4' style="margin-left: 30px; color:white;"> </div>
+            <input id='back_button' type="button" value="retry" onclick="onBackButton()"/>
         </div>
     </div>
     <div>
@@ -133,6 +168,12 @@
         button.style.display = "none";
         let number = document.getElementById('num_part');
         number.style.display = "block";
+    }
+    function onBackButton() {
+        let button = document.getElementById('button_part');
+        button.style.display = "block";
+        let number = document.getElementById('num_part');
+        number.style.display = "none";
     }
 </script>
 </body>
