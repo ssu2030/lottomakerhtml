@@ -10,6 +10,6 @@
 
 ##### 버튼 클릭 시
 
-![image](https://user-images.githubusercontent.com/31645582/209939226-d8e2a1f4-523a-4e02-bdfd-f37f98d230e1.png)
+![image](https://user-images.githubusercontent.com/31645582/209939882-c5ef65a3-797a-4188-bbf6-0032147d2535.png)
 
 
