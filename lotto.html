@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+  rel="stylesheet"
+/>
+</head>
+<body>
+<style>
+ #main_Wrapper {
+    width: 100%;
+    height: 100px;
+
+ }
+ #inner_Wrapper {
+    border-radius: 5px;
+    background-color: black;
+    width: 400px;
+    height: 310px;
+    margin: 0 auto;
+ }
+ #name_section {
+    padding-top: 40px;
+    text-align: center;
+    color: white;
+    font-weight:bold;
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v13/PbykFmXiEBPT4ITbgNA5Cgm203Tq4JJWq209pU0DPdWuqxJFA4GNDCBYtw.0.woff2)
+    format("woff2");
+    font-size: 30px;
+ }
+ #number_Wrapper {
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 360px;
+    height: 140px;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    font-style: normal;
+    font-family: "Noto Sans KR";
+    src: url(https://fonts.gstatic.com/s/notosanskr/v13/PbykFmXiEBPT4ITbgNA5Cgm203Tq4JJWq209pU0DPdWuqxJFA4GNDCBYtw.0.woff2)
+    format("woff2");
+    background-color: white;
+ }
+ #button_Select {
+    background-color: #353535;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 35px;
+
+ }
+ #button_Select:hover {
+    background-color: rgb(207, 172, 235);
+    color: #353535;
+ }
+ #button_part {
+    display: block;
+    text-align: center;
+ }
+ #num_part {
+    display: none;
+ }
+ body {
+    animation: fadeInAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+</style>
+<div id='main_Wrapper'>
+    <div id='inner_Wrapper'>
+	<p id='name_section'>Random Lotto Maker</p>
+    <div id='number_Wrapper'>
+        <div id='button_part'>
+            <input id='button_Select' type="button" value="make number" onclick="submitButton()"/>
+        </div>
+        <div id='num_part'>
+            <div id='div_0' style="margin-left: 30px;"> </div>
+            <div id='div_1' style="margin-left: 30px;"> </div>
+            <div id='div_2' style="margin-left: 30px;"> </div>
+            <div id='div_3' style="margin-left: 30px;"> </div>
+            <div id='div_4' style="margin-left: 30px;"> </div>
+        </div>
+    </div>
+    <div>
+<div>
+<script>
+    let target = document.getElementById('main_Wrapper');
+    function makeLotto(j) {
+        let lotto = [];
+        for (let i = 0; i < 6; i++) {
+            let num = Math.floor(Math.random() * 44) + 1;
+            for (let j in lotto) {
+                while (num == lotto[j]) {
+                    num = Math.floor(Math.random() * 44) + 1;
+                }
+            }
+            lotto.push(num);
+        }
+        lotto.sort(function(a,b) {
+            return a - b;
+        });
+
+        console.log(`Lucky Number [${j+1}] : ${lotto}`);
+        let id = 'div_'+j;
+        console.log('id:',id);
+        const element = document.getElementById(id);
+        console.log(element);
+        element.innerHTML = `<div> Lucky Number [ ${j+1} ] : ${lotto} </div>`;
+    }
+    
+    function submitButton() {
+        for(let i =0; i<5; i+=1) {
+            makeLotto(i);
+        }
+        let button = document.getElementById('button_part');
+        button.style.display = "none";
+        let number = document.getElementById('num_part');
+        number.style.display = "block";
+    }
+</script>
+</body>
+</html>
+
+
